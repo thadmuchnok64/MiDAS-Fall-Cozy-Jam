@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0a5ed3e328460d4d804f64523cc7bad, type: 3}
+  m_Name: TestDialogue
+  m_EditorClassIdentifier: 
+  NodeLinks:
+  - BaseNodeGUID: start
+    PortName: Next
+    TargetNodeGUID: 5cb28f2f-6496-465d-b63c-5f9d7f2db4c1
+  - BaseNodeGUID: 5cb28f2f-6496-465d-b63c-5f9d7f2db4c1
+    PortName: ok
+    TargetNodeGUID: 7316299b-60fc-4009-90d4-475c37f8de8a
+  - BaseNodeGUID: 5cb28f2f-6496-465d-b63c-5f9d7f2db4c1
+    PortName: I hate you
+    TargetNodeGUID: abd9465c-bcfe-4f9e-b91f-796a4becff84
+  - BaseNodeGUID: 7316299b-60fc-4009-90d4-475c37f8de8a
+    PortName: I dont have it, brendan didnt push his assets to the project
+    TargetNodeGUID: b751d42a-dab0-4527-9dd3-48177b0e08f9
+  DialogueNodeData:
+  - GUID: abd9465c-bcfe-4f9e-b91f-796a4becff84
+    DialogueText: go away
+    Position: {x: 582, y: 253.33333}
+  - GUID: 5cb28f2f-6496-465d-b63c-5f9d7f2db4c1
+    DialogueText: Argggg! I require a dabloon!
+    Position: {x: 278.66666, y: 168}
+  - GUID: 7316299b-60fc-4009-90d4-475c37f8de8a
+    DialogueText: give it to me now!
+    Position: {x: 607.3333, y: 131.33334}
+  - GUID: b751d42a-dab0-4527-9dd3-48177b0e08f9
+    DialogueText: ARGGGGGGG!!!!!!
+    Position: {x: 1095.3334, y: 131.33334}

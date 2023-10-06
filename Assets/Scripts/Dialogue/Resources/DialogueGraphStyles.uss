@@ -1,0 +1,8 @@
+GridBackground{
+	--grid-background-color: #282828;
+
+}
+
+.DialogueChoiceTextField > TextInput > TextElement {
+        flex-grow: 0
+    }
