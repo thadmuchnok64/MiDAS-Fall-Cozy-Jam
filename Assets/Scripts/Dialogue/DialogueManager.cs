@@ -31,7 +31,7 @@ public class DialogueManager : MonoBehaviour
     }
     
 
-    public bool RequestDialogue(DialogueContainer containter,Transform lookatPoint = null)
+    public bool RequestDialogue(DialogueContainer containter,Sprite portrait)
     {
         if (isOccupied)
             return false;
@@ -39,12 +39,16 @@ public class DialogueManager : MonoBehaviour
         isOccupied = true;
         dialogueContainer = containter;
         currentNode = containter.NodeLinks[0].TargetNodeGUID;
-        HUDManager.Instance.ToggleDialogue(true);
-        IncrementDialogue(currentNode);
+        HUDManager.Instance.ToggleDialogue(true,portrait);
+        Invoke("InitializeDialogue",1.25f);
         return true;
     }
 
-    public void IncrementDialogue(string targetGUID)
+    public void InitializeDialogue()
+    {
+		IncrementDialogue(currentNode);
+	}
+	public void IncrementDialogue(string targetGUID)
     {
         currentNode = targetGUID;
 
@@ -96,8 +100,12 @@ public class DialogueManager : MonoBehaviour
         if(choices.Count < 1)
         {
             var choiceButton = Instantiate(button, choicesBox.transform.position, choicesBox.transform.rotation, choicesBox.transform).GetComponent<DialogueChoice>();
+            if(choices.ElementAt(0).PortName == "Choice 1")
             choiceButton.Initialize("END DIALOGUE", "Continue");
-            loadedChoices.Add(choiceButton);
+            else
+				choiceButton.Initialize("END DIALOGUE", choices.ElementAt(0).PortName);
+
+			loadedChoices.Add(choiceButton);
         }
         Invoke("AdjustDialogueOptions", .1F);
         
