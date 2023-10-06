@@ -13,10 +13,6 @@ public class DragAndDrop : MonoBehaviour
     public static bool isDragging = false;
     public static bool canDrag = true;
     public static bool isResetting;
-    private void Start()
-    {
-
-    }
     private Vector3 GetMouseAsWorldPoint()
     {
         Vector3 mousePoint = Input.mousePosition;
@@ -31,12 +27,12 @@ public class DragAndDrop : MonoBehaviour
         {
             return hit.point + hit.normal*.25f;
         }
-        return Vector3.zero; // changes this to scroll on the screen even if not touching room
+        return ray.origin + ray.direction * 5; // changes this to scroll on the screen even if not touching room
     }
     private Vector3 AdjustBasedOnBounds(Vector3 position)
     {
         //IMPORTANT: This only works if ever object has a boxcollider, and specifically a BOX collider.
-        var dimensions = GetComponent<BoxCollider>().size;
+        var dimensions = GetComponent<BoxCollider>().size/2;
         var modifier = new Vector3(
             position.x - AdjustBasedOnDimension(position, transform.right, dimensions.x),
             position.y - AdjustBasedOnDimension(position, transform.up, dimensions.y),
@@ -74,7 +70,12 @@ public class DragAndDrop : MonoBehaviour
             transform.position = mPosition;
         }
     }
-    void OnMouseUp()
+
+	private void OnMouseDown()
+	{
+		CustomerManager.Instance.heldItem = GetComponent<Item>().name;
+	}
+	void OnMouseUp()
     {
         if (canDrag == true)
         {

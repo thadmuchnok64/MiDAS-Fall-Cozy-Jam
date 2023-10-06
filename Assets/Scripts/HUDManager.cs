@@ -36,10 +36,16 @@ public class HUDManager : MonoBehaviour
         if(starting)
         {
             anim.SetBool("DialogueActive", true);
+            anim.SetBool("CharacterActive", true);
         }
         else
         {
 			anim.SetBool("DialogueActive", false);
 		}
 	}
+
+    public void CharacterExit()
+    {
+        anim.SetBool("CharacterActive", false);
+    }
 }

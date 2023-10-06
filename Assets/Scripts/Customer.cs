@@ -8,5 +8,6 @@ public class Customer : ScriptableObject
     public string name;
     public Sprite icon;
     public DialogueContainer dialogueContainer;
-    //public Item correctItemContainer;
+    public DialogueContainer happyDialogueContainer;
+    public string correctItemName;
 }
