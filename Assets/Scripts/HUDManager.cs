@@ -57,6 +57,7 @@ public class HUDManager : MonoBehaviour
 
     public void GoToDefaultState()
     {
+        isOccupied = false;
         anim.Play("Default");
     }
     public void CharacterExit()
@@ -68,6 +69,7 @@ public class HUDManager : MonoBehaviour
     {
         if (isOccupied)
             return false;
+        isOccupied = true;
         anim.Play("Fade");
         return true;
     }

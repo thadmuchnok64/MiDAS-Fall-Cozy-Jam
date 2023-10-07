@@ -99,6 +99,7 @@ public class DragAndDrop : MonoBehaviour
 	private void OnMouseDown()
 	{
 		CustomerManager.Instance.heldItem = GetComponent<Item>().itemName;
+        transform.parent = null;
 	}
 	void OnMouseUp()
     {
@@ -128,6 +129,7 @@ public class DragAndDrop : MonoBehaviour
                 yield return new WaitForFixedUpdate();
             }
 			transform.position = Vector3.Lerp(transform.position, target, 1);
+            transform.parent = hit.transform;
 		}
 
 	}

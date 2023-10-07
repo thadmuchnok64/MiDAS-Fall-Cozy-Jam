@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
+using static UnityEngine.UIElements.UxmlAttributeDescription;
 
 public class CustomerManager : MonoBehaviour
 {
@@ -56,9 +58,17 @@ public class CustomerManager : MonoBehaviour
 			currentCustomer = null;
             Invoke("IterateCustomer", 3);
 
+		} else if(currentCustomer == null && !HUDManager.Instance.isOccupied)
+        {
+			currentCustomer = listOfCustomers.Where(c => c.customerSatisfied != true).FirstOrDefault();
+            Invoke("CustomerWalkIn", Random.Range(3, 5));
 		}
 	}
 
+    public void CustomerWalkIn()
+    {
+		DialogueManager.instance.RequestDialogue(currentCustomer.dialogueContainer, currentCustomer.icon);
+	}
     public void IterateCustomer()
     {
 		HUDManager.Instance.Fade();
