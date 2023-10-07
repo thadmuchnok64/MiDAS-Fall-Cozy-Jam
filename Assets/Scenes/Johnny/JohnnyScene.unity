@@ -729,8 +729,7 @@ MonoBehaviour:
   - {fileID: 791417731}
   - {fileID: 124285133}
   camDestinationPoint: 0
-  camRotationCount: 4
-  journeyTime: 5
+  camRotationCount: 0
   xGroup: {fileID: 1008419846}
   zGroup: {fileID: 2054034822}
   negXGroup: {fileID: 932404487}
