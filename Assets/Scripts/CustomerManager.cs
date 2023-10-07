@@ -9,6 +9,8 @@ public class CustomerManager : MonoBehaviour
     public Customer currentCustomer;
    public string heldItem;
     bool withinBounds = false;
+    public UIFade fade;
+    public List<Customer> listOfCustomers = new List<Customer>();
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +24,8 @@ public class CustomerManager : MonoBehaviour
             Destroy(this);
         }
     }
+
+    
 
 
     // I know this isn't the prettiest, but I had to work around a unity bug
@@ -47,12 +51,24 @@ public class CustomerManager : MonoBehaviour
                 Invoke("EndCustomer", .2f);
 			}
         }
+        if(currentCustomer !=null && currentCustomer.customerSatisfied && !HUDManager.Instance.isOccupied && HUDManager.Instance.ReadyForNewCustomer())
+        {
+			currentCustomer = null;
+            Invoke("IterateCustomer", 3);
+
+		}
+	}
+
+    public void IterateCustomer()
+    {
+		HUDManager.Instance.Fade();
 	}
 
     public void EndCustomer()
     {
         HUDManager.Instance.CharacterExit();
     }
+
 
 
 }
