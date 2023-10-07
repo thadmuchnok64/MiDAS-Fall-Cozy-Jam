@@ -27,6 +27,12 @@ public class CameraController : MonoBehaviour
     public GameObject negXGroup;
     public GameObject negZGroup;
 
+    public GameObject xZCorner;
+    public GameObject xNegZCorner;
+    public GameObject negXNegZCorner;
+    public GameObject negXZCorner;
+
+
     bool mustHideObjects = false;
 
 
@@ -154,13 +160,23 @@ public class CameraController : MonoBehaviour
             negXGroup.SetActive(false);
             negZGroup.SetActive(false);
 
-        }
+            xZCorner.SetActive(true);
+            xNegZCorner.SetActive(true);
+            negXNegZCorner.SetActive(false);
+            negXZCorner.SetActive(true);
+
+}
         else if (camDestinationPoint == 1)
         {
             xGroup.SetActive(true);
             zGroup.SetActive(false);
             negXGroup.SetActive(false);
             negZGroup.SetActive(true);
+
+            xZCorner.SetActive(true);
+            xNegZCorner.SetActive(true);
+            negXNegZCorner.SetActive(true);
+            negXZCorner.SetActive(false);
         }
         else if (camDestinationPoint == 2)
         {
@@ -168,6 +184,11 @@ public class CameraController : MonoBehaviour
             zGroup.SetActive(false);
             negXGroup.SetActive(true);
             negZGroup.SetActive(true);
+
+            xZCorner.SetActive(false);
+            xNegZCorner.SetActive(true);
+            negXNegZCorner.SetActive(true);
+            negXZCorner.SetActive(true);
         }
         else if (camDestinationPoint == 3)
         {
@@ -175,6 +196,11 @@ public class CameraController : MonoBehaviour
             zGroup.SetActive(true);
             negXGroup.SetActive(true);
             negZGroup.SetActive(false);
+
+            xZCorner.SetActive(true);
+            xNegZCorner.SetActive(false);
+            negXNegZCorner.SetActive(true);
+            negXZCorner.SetActive(true);
         }
 
         mustHideObjects = false;
