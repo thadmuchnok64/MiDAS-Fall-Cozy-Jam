@@ -47,6 +47,8 @@ public class DialogueManager : MonoBehaviour
     public void InitializeDialogue()
     {
 		IncrementDialogue(currentNode);
+		dialogueBox.text = "";
+
 	}
 	public void IncrementDialogue(string targetGUID)
     {
@@ -97,17 +99,15 @@ public class DialogueManager : MonoBehaviour
             choiceButton.Initialize(choice.TargetNodeGUID, choice.PortName);
             loadedChoices.Add(choiceButton);
         }
+        
         if(choices.Count < 1)
         {
             var choiceButton = Instantiate(button, choicesBox.transform.position, choicesBox.transform.rotation, choicesBox.transform).GetComponent<DialogueChoice>();
-            if(choices.ElementAt(0).PortName == "Choice 1")
             choiceButton.Initialize("END DIALOGUE", "Continue");
-            else
-				choiceButton.Initialize("END DIALOGUE", choices.ElementAt(0).PortName);
-
 			loadedChoices.Add(choiceButton);
         }
-        Invoke("AdjustDialogueOptions", .1F);
+        
+        //Invoke("AdjustDialogueOptions", .05F);
         
     }
 
