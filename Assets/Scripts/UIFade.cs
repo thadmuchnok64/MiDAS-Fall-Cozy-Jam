@@ -6,24 +6,42 @@ public class UIFade : MonoBehaviour
 {
     public Material mat;
 	public AnimationCurve curve;
+	float timer = 0;
+	float time = 1.5f;
+	bool fadeIn = false;
+	bool fadeOut = false;
+	bool destroyed = false;
+
 
 	private void OnEnable()
 	{
-        StartCoroutine(FadeCor());
-    }
-    IEnumerator FadeCor()
-    {
-        for( float i = 0; i < 60; i++)
-        {
-            mat.SetFloat("_Fade", curve.Evaluate(i / 60.0f));
-            yield return new WaitForEndOfFrame();
-        }
-		yield return new WaitForSeconds(.5f);
-		for (float i = 60; i >= 0; i--)
+		timer = 0;
+		fadeIn = true;
+		fadeOut = true;
+		destroyed = true;
+	}
+	private void Update()
+	{
+		if (fadeIn && fadeOut)
 		{
-			mat.SetFloat("_Fade", curve.Evaluate(i / 60.0f));
-			yield return new WaitForEndOfFrame();
+			timer += Time.deltaTime;
+			mat.SetFloat("_Fade", curve.Evaluate(timer / time));
+			if (timer > time)
+				fadeIn = false;
 		}
-		HUDManager.Instance.GoToDefaultState();
+		else if (fadeOut && !fadeIn)
+		{
+			timer -= Time.deltaTime;
+			mat.SetFloat("_Fade", curve.Evaluate(timer / time));
+			if (timer < 0)
+				fadeOut = false;
+		}
+		else if (!fadeOut && !fadeIn && destroyed)
+		{
+			HUDManager.Instance.GoToDefaultState();
+			destroyed = false;
+
+		}
+	
 	}
 }
