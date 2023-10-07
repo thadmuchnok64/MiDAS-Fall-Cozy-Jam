@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0a5ed3e328460d4d804f64523cc7bad, type: 3}
+  m_Name: lGirlDialogue
+  m_EditorClassIdentifier: 
+  NodeLinks:
+  - BaseNodeGUID: start
+    PortName: Next
+    TargetNodeGUID: 5cb28f2f-6496-465d-b63c-5f9d7f2db4c1
+  - BaseNodeGUID: 5cb28f2f-6496-465d-b63c-5f9d7f2db4c1
+    PortName: Hello there.
+    TargetNodeGUID: 7316299b-60fc-4009-90d4-475c37f8de8a
+  - BaseNodeGUID: 5cb28f2f-6496-465d-b63c-5f9d7f2db4c1
+    PortName: What brings you here Ma'am?
+    TargetNodeGUID: abd9465c-bcfe-4f9e-b91f-796a4becff84
+  - BaseNodeGUID: abd9465c-bcfe-4f9e-b91f-796a4becff84
+    PortName: Can I help you find what you are looking for?
+    TargetNodeGUID: b751d42a-dab0-4527-9dd3-48177b0e08f9
+  - BaseNodeGUID: abd9465c-bcfe-4f9e-b91f-796a4becff84
+    PortName: Why is that?
+    TargetNodeGUID: 0bd0a942-0f44-45b7-ba5c-aed095fca481
+  - BaseNodeGUID: 7316299b-60fc-4009-90d4-475c37f8de8a
+    PortName: Can't say that I have.
+    TargetNodeGUID: b751d42a-dab0-4527-9dd3-48177b0e08f9
+  - BaseNodeGUID: 7316299b-60fc-4009-90d4-475c37f8de8a
+    PortName: What did she look like?
+    TargetNodeGUID: 0bd0a942-0f44-45b7-ba5c-aed095fca481
+  - BaseNodeGUID: b751d42a-dab0-4527-9dd3-48177b0e08f9
+    PortName: What road?
+    TargetNodeGUID: 0bd0a942-0f44-45b7-ba5c-aed095fca481
+  - BaseNodeGUID: 0bd0a942-0f44-45b7-ba5c-aed095fca481
+    PortName: Why did you go back if you had an extra?
+    TargetNodeGUID: 8b98604f-d066-4ff0-8dec-8e2164a694d9
+  DialogueNodeData:
+  - GUID: 5cb28f2f-6496-465d-b63c-5f9d7f2db4c1
+    DialogueText: Oh hello Mr. Shopkeeper!
+    Position: {x: 280, y: 200}
+  - GUID: abd9465c-bcfe-4f9e-b91f-796a4becff84
+    DialogueText: You are just too funny Mr. Shopkeeper! I'm here because well...
+      I'm lost.
+    Position: {x: 661, y: 384}
+  - GUID: 7316299b-60fc-4009-90d4-475c37f8de8a
+    DialogueText: Umm, did you see my mommy?
+    Position: {x: 661, y: 83}
+  - GUID: b751d42a-dab0-4527-9dd3-48177b0e08f9
+    DialogueText: Oh no! I was going to school, and I think I crossed the wrong road
+      and then I was here.
+    Position: {x: 1289, y: 83}
+  - GUID: 0bd0a942-0f44-45b7-ba5c-aed095fca481
+    DialogueText: I'm not sure, I was running to school and I fell. I lost something
+      I needed for school, I had two of them but I needed to go back for one.
+    Position: {x: 1345, y: 384}
+  - GUID: 8b98604f-d066-4ff0-8dec-8e2164a694d9
+    DialogueText: Becauuuuussseee I neeeeeeeded it! Mommy said so!
+    Position: {x: 2253, y: 616}

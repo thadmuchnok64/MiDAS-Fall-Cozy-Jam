@@ -11,6 +11,7 @@ public class DialogueTrigger: MonoBehaviour
 	public void RequestDialogue()
     {
         DialogueManager.instance.RequestDialogue(customer.dialogueContainer,customer.icon);
+        CustomerManager.Instance.currentCustomer = customer;
         used = true;
     }
 }

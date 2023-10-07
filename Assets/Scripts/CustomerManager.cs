@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class CustomerManager : MonoBehaviour
@@ -7,6 +8,7 @@ public class CustomerManager : MonoBehaviour
    public static CustomerManager Instance;
     public Customer currentCustomer;
    public string heldItem;
+    bool withinBounds = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,12 +23,35 @@ public class CustomerManager : MonoBehaviour
         }
     }
 
-    public void PortaitEvent()
+
+    // I know this isn't the prettiest, but I had to work around a unity bug
+    public void Enter()
     {
-        if(currentCustomer.correctItemName.Equals(heldItem))
+        withinBounds = true;
+    }
+
+	public void Leave()
+	{
+        withinBounds = false;
+
+	}
+
+	private void Update()
+	{
+        if (withinBounds && Input.GetMouseButtonUp(0))
         {
-            DialogueManager.instance.RequestDialogue(currentCustomer.happyDialogueContainer,currentCustomer.icon);
+            if(currentCustomer.correctItemName == heldItem)
+            {
+                DialogueManager.instance.RequestDialogue(currentCustomer.happyDialogueContainer,currentCustomer.icon);
+                currentCustomer.customerSatisfied = true;
+                Invoke("EndCustomer", .2f);
+			}
         }
+	}
+
+    public void EndCustomer()
+    {
+        HUDManager.Instance.CharacterExit();
     }
 
 
