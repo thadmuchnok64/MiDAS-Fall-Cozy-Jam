@@ -350,6 +350,10 @@ MonoBehaviour:
   zGroup: {fileID: 6842418809963302702}
   negXGroup: {fileID: 2322988246578650956}
   negZGroup: {fileID: 8594404800536816514}
+  xZCorner: {fileID: 1983977027127830520}
+  xNegZCorner: {fileID: 8337102751101267399}
+  negXNegZCorner: {fileID: 5291977345033208199}
+  negXZCorner: {fileID: 651534484520801011}
 --- !u!4 &254181384
 Transform:
   m_ObjectHideFlags: 0
@@ -20528,7 +20532,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &8359592805414992217
 GameObject:
   m_ObjectHideFlags: 0
