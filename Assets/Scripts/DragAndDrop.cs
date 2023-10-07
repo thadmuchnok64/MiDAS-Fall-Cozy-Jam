@@ -73,7 +73,7 @@ public class DragAndDrop : MonoBehaviour
 
 	private void OnMouseDown()
 	{
-		CustomerManager.Instance.heldItem = GetComponent<Item>().name;
+		CustomerManager.Instance.heldItem = GetComponent<Item>().itemName;
 	}
 	void OnMouseUp()
     {

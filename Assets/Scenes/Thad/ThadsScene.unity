@@ -495,13 +495,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Delegates:
-  - eventID: 3
+  - eventID: 0
     callback:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 336469854}
           m_TargetAssemblyTypeName: CustomerManager, Assembly-CSharp
-          m_MethodName: PortaitEvent
+          m_MethodName: Enter
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 336469854}
+          m_TargetAssemblyTypeName: CustomerManager, Assembly-CSharp
+          m_MethodName: Leave
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -935,7 +951,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4175836453701995276, guid: 8a7b7e355e27d37479f19148e1a2ba0c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4175836453701995276, guid: 8a7b7e355e27d37479f19148e1a2ba0c, type: 3}
       propertyPath: m_LocalPosition.y
@@ -943,7 +959,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4175836453701995276, guid: 8a7b7e355e27d37479f19148e1a2ba0c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -3
       objectReference: {fileID: 0}
     - target: {fileID: 4175836453701995276, guid: 8a7b7e355e27d37479f19148e1a2ba0c, type: 3}
       propertyPath: m_LocalRotation.w
