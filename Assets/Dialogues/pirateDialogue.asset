@@ -1,0 +1,88 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0a5ed3e328460d4d804f64523cc7bad, type: 3}
+  m_Name: pirateDialogue
+  m_EditorClassIdentifier: 
+  NodeLinks:
+  - BaseNodeGUID: start
+    PortName: Next
+    TargetNodeGUID: 5cb28f2f-6496-465d-b63c-5f9d7f2db4c1
+  - BaseNodeGUID: 5cb28f2f-6496-465d-b63c-5f9d7f2db4c1
+    PortName: Ahoy. What brings you into this here "shoppe"?
+    TargetNodeGUID: 7316299b-60fc-4009-90d4-475c37f8de8a
+  - BaseNodeGUID: 5cb28f2f-6496-465d-b63c-5f9d7f2db4c1
+    PortName: but how.
+    TargetNodeGUID: abd9465c-bcfe-4f9e-b91f-796a4becff84
+  - BaseNodeGUID: 7316299b-60fc-4009-90d4-475c37f8de8a
+    PortName: Naur.
+    TargetNodeGUID: b751d42a-dab0-4527-9dd3-48177b0e08f9
+  - BaseNodeGUID: abd9465c-bcfe-4f9e-b91f-796a4becff84
+    PortName: Thats sounds cool.
+    TargetNodeGUID: b751d42a-dab0-4527-9dd3-48177b0e08f9
+  - BaseNodeGUID: abd9465c-bcfe-4f9e-b91f-796a4becff84
+    PortName: That sounds scary.
+    TargetNodeGUID: 1f19fcc4-5313-4928-bee1-38cbefbfe3d9
+  - BaseNodeGUID: 7316299b-60fc-4009-90d4-475c37f8de8a
+    PortName: Just a bit.
+    TargetNodeGUID: 1f19fcc4-5313-4928-bee1-38cbefbfe3d9
+  - BaseNodeGUID: b751d42a-dab0-4527-9dd3-48177b0e08f9
+    PortName: What about yar treasure?
+    TargetNodeGUID: 12919528-b8fd-49b4-937e-7899438e74c7
+  - BaseNodeGUID: b751d42a-dab0-4527-9dd3-48177b0e08f9
+    PortName: Yar be a muscian?
+    TargetNodeGUID: 3c007b71-21d2-40d9-9791-b3331be89669
+  - BaseNodeGUID: 1f19fcc4-5313-4928-bee1-38cbefbfe3d9
+    PortName: Tell me more about treasure.
+    TargetNodeGUID: 12919528-b8fd-49b4-937e-7899438e74c7
+  - BaseNodeGUID: 1f19fcc4-5313-4928-bee1-38cbefbfe3d9
+    PortName: That doesn't sound gramatically correct.
+    TargetNodeGUID: 1e0f2049-63ec-47e8-8d0f-a9fdff7569c2
+  - BaseNodeGUID: 12919528-b8fd-49b4-937e-7899438e74c7
+    PortName: What is it you came for?
+    TargetNodeGUID: 1e0f2049-63ec-47e8-8d0f-a9fdff7569c2
+  - BaseNodeGUID: 12919528-b8fd-49b4-937e-7899438e74c7
+    PortName: Wise words.
+    TargetNodeGUID: f539c9d8-4685-4b87-bf63-4900906e5781
+  DialogueNodeData:
+  - GUID: 5cb28f2f-6496-465d-b63c-5f9d7f2db4c1
+    DialogueText: ARGH MATEY! I've sailed the seven seas and have yet to come across
+      ye old shoppe.
+    Position: {x: 259, y: 200}
+  - GUID: 7316299b-60fc-4009-90d4-475c37f8de8a
+    DialogueText: Oh I be a pirate!... Ye aren't the slightest bit frightened?
+    Position: {x: 960, y: 104}
+  - GUID: abd9465c-bcfe-4f9e-b91f-796a4becff84
+    DialogueText: I was haulin me treasure back to me ship, the last thing I remember
+      was telling a feller to stop mishandling me powder keg!
+    Position: {x: 960, y: 359}
+  - GUID: b751d42a-dab0-4527-9dd3-48177b0e08f9
+    DialogueText: Ye be a brave soul. Ye remind me of me ole crew, they would enjoy
+      me songs I used to play.
+    Position: {x: 1561, y: 79}
+  - GUID: 1f19fcc4-5313-4928-bee1-38cbefbfe3d9
+    DialogueText: Ye be thinkin the pirate life be scary, but truly was a great blessing.
+      The numbskulls my crew be, they were loyal they were.
+    Position: {x: 1906, y: 385}
+  - GUID: 12919528-b8fd-49b4-937e-7899438e74c7
+    DialogueText: Aye. Let me be the first to tell you matey, treasure is not all
+      there is to being a pirate.
+    Position: {x: 2282, y: 199}
+  - GUID: 1e0f2049-63ec-47e8-8d0f-a9fdff7569c2
+    DialogueText: I be a pirate! I plunder where I must! That shan't be enough for
+      ye?
+    Position: {x: 2960, y: 409}
+  - GUID: f539c9d8-4685-4b87-bf63-4900906e5781
+    DialogueText: Sometimes, less be more. I'll take yer item now! Avast!
+    Position: {x: 2960, y: 258}
+  - GUID: 3c007b71-21d2-40d9-9791-b3331be89669
+    DialogueText: I do be! I miss the sweet shanties me crew would sing with me.
+    Position: {x: 2960, y: 103}

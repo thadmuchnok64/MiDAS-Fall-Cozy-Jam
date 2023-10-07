@@ -1,0 +1,72 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0a5ed3e328460d4d804f64523cc7bad, type: 3}
+  m_Name: knightDialogue
+  m_EditorClassIdentifier: 
+  NodeLinks:
+  - BaseNodeGUID: start
+    PortName: Next
+    TargetNodeGUID: 5cb28f2f-6496-465d-b63c-5f9d7f2db4c1
+  - BaseNodeGUID: 5cb28f2f-6496-465d-b63c-5f9d7f2db4c1
+    PortName: I'm tired.
+    TargetNodeGUID: 7316299b-60fc-4009-90d4-475c37f8de8a
+  - BaseNodeGUID: 5cb28f2f-6496-465d-b63c-5f9d7f2db4c1
+    PortName: I got a shirt, pants, but no lance.
+    TargetNodeGUID: abd9465c-bcfe-4f9e-b91f-796a4becff84
+  - BaseNodeGUID: b751d42a-dab0-4527-9dd3-48177b0e08f9
+    PortName: What was your pleasure?
+    TargetNodeGUID: 71e633ae-e843-4267-94f7-a47819a44d65
+  - BaseNodeGUID: b751d42a-dab0-4527-9dd3-48177b0e08f9
+    PortName: I pray thee luck on thine journey.
+    TargetNodeGUID: d17753e4-5002-4078-9eb9-efc9d9131d53
+  - BaseNodeGUID: 7316299b-60fc-4009-90d4-475c37f8de8a
+    PortName: Why is that?
+    TargetNodeGUID: b751d42a-dab0-4527-9dd3-48177b0e08f9
+  - BaseNodeGUID: abd9465c-bcfe-4f9e-b91f-796a4becff84
+    PortName: You need something.
+    TargetNodeGUID: 0bd0a942-0f44-45b7-ba5c-aed095fca481
+  - BaseNodeGUID: 0bd0a942-0f44-45b7-ba5c-aed095fca481
+    PortName: What was thine wish?
+    TargetNodeGUID: 71e633ae-e843-4267-94f7-a47819a44d65
+  - BaseNodeGUID: 0bd0a942-0f44-45b7-ba5c-aed095fca481
+    PortName: Torment?
+    TargetNodeGUID: c74d806e-f2a6-465c-84dd-b6af63ed9664
+  DialogueNodeData:
+  - GUID: 5cb28f2f-6496-465d-b63c-5f9d7f2db4c1
+    DialogueText: Greetings young squire! I must inquire about your peculiar attire!
+    Position: {x: 280, y: 200}
+  - GUID: b751d42a-dab0-4527-9dd3-48177b0e08f9
+    DialogueText: Come hither! Pray thee find my belov'd treasure, but not what was
+      my pleasure!
+    Position: {x: 1618, y: 80}
+  - GUID: 7316299b-60fc-4009-90d4-475c37f8de8a
+    DialogueText: Dear heavens! You wish to say, one doth not know that my lance
+      is away.
+    Position: {x: 956, y: 80}
+  - GUID: abd9465c-bcfe-4f9e-b91f-796a4becff84
+    DialogueText: Ah one after my own heart, I hate to say it but mine hath torn
+      apart.
+    Position: {x: 956, y: 381}
+  - GUID: 0bd0a942-0f44-45b7-ba5c-aed095fca481
+    DialogueText: Nay, friend. I shall have met my glorious moment, I need now what
+      I sought through all my torment.
+    Position: {x: 1618, y: 405}
+  - GUID: 71e633ae-e843-4267-94f7-a47819a44d65
+    DialogueText: To speak and share, my most valuable writings, not fight thine
+      pitiful fightings.
+    Position: {x: 2448, y: 80}
+  - GUID: c74d806e-f2a6-465c-84dd-b6af63ed9664
+    DialogueText: If thine must know, I wielded a sword to and fro.
+    Position: {x: 2448, y: 357}
+  - GUID: d17753e4-5002-4078-9eb9-efc9d9131d53
+    DialogueText: But wait! Thine item you must fetch me.
+    Position: {x: 2448, y: 223}
