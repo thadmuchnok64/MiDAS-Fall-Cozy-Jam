@@ -31,6 +31,7 @@ public class MusicManager : MonoBehaviour
             aud.volume = Mathf.Lerp(1, 0, i / 120f);
             yield return new WaitForEndOfFrame();
         }
+        aud.Stop();
         aud.PlayOneShot(clip);
 		for (float i = 0; i < 120; i++)
 		{
