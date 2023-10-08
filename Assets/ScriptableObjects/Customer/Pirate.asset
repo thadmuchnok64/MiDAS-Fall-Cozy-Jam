@@ -16,5 +16,6 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: 70613f25992e7ca49b1adcb07617c0a1, type: 3}
   dialogueContainer: {fileID: 11400000, guid: 834fa24240be49d45afa3795e25acd5f, type: 2}
   happyDialogueContainer: {fileID: 11400000, guid: 911ffcdfcf11d5e47a4c9fb35fd0f8a5, type: 2}
+  sadDialogueContainer: {fileID: 11400000, guid: d01a1150c78f1f74ebcea8f6689f2600, type: 2}
   correctItemName: Gurdy
   customerSatisfied: 1

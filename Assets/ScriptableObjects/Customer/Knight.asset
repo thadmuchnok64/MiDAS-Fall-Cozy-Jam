@@ -16,5 +16,6 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: f2e423961b965f34c802c0970983d168, type: 3}
   dialogueContainer: {fileID: 11400000, guid: f0faf62490c841c458d1e2850675687d, type: 2}
   happyDialogueContainer: {fileID: 11400000, guid: e1612eddab9fd294ab154519686f70d7, type: 2}
+  sadDialogueContainer: {fileID: 11400000, guid: 49e07d3cc8b5260499e8f026ed89cc86, type: 2}
   correctItemName: Poems
   customerSatisfied: 0

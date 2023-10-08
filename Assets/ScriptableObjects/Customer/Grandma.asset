@@ -16,5 +16,6 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: afde42beccd29074f9bf5c07705f1b41, type: 3}
   dialogueContainer: {fileID: 11400000, guid: c19f6ba904687e5419245237f04a0453, type: 2}
   happyDialogueContainer: {fileID: 11400000, guid: 371f874109d3cad458ef7746ab88238a, type: 2}
+  sadDialogueContainer: {fileID: 11400000, guid: 678183f0a88b7534cabbb16114d042b7, type: 2}
   correctItemName: Helmet
   customerSatisfied: 0
