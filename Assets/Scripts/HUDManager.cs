@@ -55,6 +55,10 @@ public class HUDManager : MonoBehaviour
 		}
 	}
 
+    public void EndGame()
+    {
+        anim.SetBool("EndGame", true);
+    }
     public void GoToDefaultState()
     {
         isOccupied = false;

@@ -8,6 +8,7 @@ TagManager:
   - y
   - -x
   - -y
+  - ItemRespawn
   layers:
   - Default
   - TransparentFX

@@ -9,11 +9,13 @@ public class CustomerManager : MonoBehaviour
 {
    public static CustomerManager Instance;
     public Customer currentCustomer;
-   public string heldItem;
+   public Item heldItem;
     bool withinBounds = false;
     public UIFade fade;
     public List<Customer> listOfCustomers = new List<Customer>();
-    bool readyForCustomer = true;
+    public Customer everyone;
+    bool readyForCustomer = false;
+    bool over = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -46,41 +48,67 @@ public class CustomerManager : MonoBehaviour
 
 	private void Update()
 	{
-        if(Input.GetKeyDown(KeyCode.Escape))
+        if (!over)
         {
-            Application.Quit();
-        }
-        if (withinBounds && Input.GetMouseButtonUp(0))
-        {
-            if(currentCustomer.correctItemName == heldItem)
+            if (Input.GetKeyDown(KeyCode.Escape))
             {
-                DialogueManager.instance.RequestDialogue(currentCustomer.happyDialogueContainer,currentCustomer.icon);
-                currentCustomer.customerSatisfied = true;
-                Invoke("EndCustomer", .2f);
-			}
-        }
-        if(readyForCustomer && currentCustomer !=null && currentCustomer.customerSatisfied && !HUDManager.Instance.isOccupied && HUDManager.Instance.ReadyForNewCustomer())
-        {
-            readyForCustomer = false;
-			currentCustomer = null;
-            Invoke("IterateCustomer", 3);
+                Application.Quit();
+            }
+            if (withinBounds && Input.GetMouseButtonUp(0))
+            {
+                if (currentCustomer.correctItemName == heldItem.itemName)
+                {
+                    heldItem.DestroyItem();
+                    DialogueManager.instance.RequestDialogue(currentCustomer.happyDialogueContainer, currentCustomer.icon);
+                    currentCustomer.customerSatisfied = true;
+                    Invoke("EndCustomer", .2f);
+                }
+            }
+            if (readyForCustomer && currentCustomer != null && currentCustomer.customerSatisfied && !HUDManager.Instance.isOccupied && HUDManager.Instance.ReadyForNewCustomer())
+            {
+                readyForCustomer = false;
+                currentCustomer = null;
+                Invoke("IterateCustomer", 3);
 
-		} else if(currentCustomer == null && !HUDManager.Instance.isOccupied)
+            }
+            else if (currentCustomer == null && !HUDManager.Instance.isOccupied)
+            {
+                try
+                {
+                    currentCustomer = listOfCustomers.Where(c => c.customerSatisfied != true).FirstOrDefault();
+                    if (currentCustomer == null)
+                    {
+						// end the game
+						int i = 0;
+						over = true;
+						DialogueManager.instance.RequestDialogue(currentCustomer.dialogueContainer, currentCustomer.icon);
+					}
+                    if (readyForCustomer == false)
+                        Invoke("CustomerWalkIn", Random.Range(10, 15));
+                    readyForCustomer = true;
+                }
+                catch
+                {
+                    // end the game
+                    int i = 0;
+                    over = true;
+                }
+            }
+        }
+        else
         {
-            try
-            {
-                currentCustomer = listOfCustomers.Where(c => c.customerSatisfied != true).FirstOrDefault();
-                Invoke("CustomerWalkIn", Random.Range(10, 15));
-                readyForCustomer = true;
-            }
-            catch
-            {
-                // end the game
-            }
-		}
+            Invoke("EndGame", 12);
+        }
+        
 	}
 
-    public void CustomerWalkIn()
+    public void EndGame()
+    {
+		DialogueManager.instance.RequestDialogue(currentCustomer.dialogueContainer, currentCustomer.icon);
+        HUDManager.Instance.EndGame();
+	}
+
+	public void CustomerWalkIn()
     {
         if (currentCustomer == null)
             return; //end game

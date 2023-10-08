@@ -19,11 +19,24 @@ public class DragAndDrop : MonoBehaviour
     public static bool isResetting;
     float scrollCooldown = .5f;
     float scrolltimer = 0;
+    Vector3 initialPos,initialRot;
+    Transform initialParent;
     Rigidbody rb;
 	private void Start()
 	{
 		rb = GetComponent<Rigidbody>();
+        initialPos = transform.position;
+        initialRot = transform.eulerAngles;
+        initialParent = transform.parent;
 	}
+
+    public void ResetToDefaultLocation()
+    {
+        rb.isKinematic = true;
+        transform.position = initialPos;
+        transform.eulerAngles = initialRot;
+        transform.parent = initialParent;
+    }
 	private Vector3 GetMouseAsWorldPoint()
     {
         Vector3 mousePoint = Input.mousePosition;
@@ -105,7 +118,7 @@ public class DragAndDrop : MonoBehaviour
     
 	private void OnMouseDown()
 	{
-		CustomerManager.Instance.heldItem = GetComponent<Item>().itemName;
+		CustomerManager.Instance.heldItem = GetComponent<Item>();
         transform.parent = null;
         SoundEffectRequest.instance.PlaySound(DragNoise);
 	}
@@ -122,6 +135,12 @@ public class DragAndDrop : MonoBehaviour
             //audio.Play();
         }
     }
+
+	private void OnTriggerEnter(Collider other)
+	{
+        if (other.tag == "ItemRespawn")
+            ResetToDefaultLocation();
+	}
 	private void OnCollisionEnter(Collision collision)
 	{
         rb.isKinematic = true;
@@ -182,4 +201,5 @@ public class DragAndDrop : MonoBehaviour
             Debug.Log("Reset");
         }
     }
+
 }

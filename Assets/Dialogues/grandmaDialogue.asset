@@ -1,0 +1,74 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0a5ed3e328460d4d804f64523cc7bad, type: 3}
+  m_Name: grandmaDialogue
+  m_EditorClassIdentifier: 
+  NodeLinks:
+  - BaseNodeGUID: start
+    PortName: Next
+    TargetNodeGUID: 3ac1f748-8495-4651-9c5a-3c5949ba2fa9
+  - BaseNodeGUID: 3ac1f748-8495-4651-9c5a-3c5949ba2fa9
+    PortName: Ehh. At least people seem to like it
+    TargetNodeGUID: 8b85c21b-5e79-48aa-95fe-02518bb8a8ce
+  - BaseNodeGUID: 3ac1f748-8495-4651-9c5a-3c5949ba2fa9
+    PortName: Thank you ma'am
+    TargetNodeGUID: 8c372120-7218-4005-b096-94fff0b9539f
+  - BaseNodeGUID: 8c372120-7218-4005-b096-94fff0b9539f
+    PortName: Don't say that. You still have a lot of life left!
+    TargetNodeGUID: 29b06303-ff02-46c2-8cd2-b47b5cf13fb1
+  - BaseNodeGUID: 8b85c21b-5e79-48aa-95fe-02518bb8a8ce
+    PortName: Why do you think they're sentimental?
+    TargetNodeGUID: d32ba95a-f972-4ead-8cbd-4eb5e0c83884
+  - BaseNodeGUID: d32ba95a-f972-4ead-8cbd-4eb5e0c83884
+    PortName: What do you mean? I didnt take these items from anyone.
+    TargetNodeGUID: 29b06303-ff02-46c2-8cd2-b47b5cf13fb1
+  - BaseNodeGUID: 8c372120-7218-4005-b096-94fff0b9539f
+    PortName: What did you two do together?
+    TargetNodeGUID: 5ce37c8f-16fe-414f-8819-6b938a149272
+  - BaseNodeGUID: 8b85c21b-5e79-48aa-95fe-02518bb8a8ce
+    PortName: Looking for anything in particular?
+    TargetNodeGUID: 5ce37c8f-16fe-414f-8819-6b938a149272
+  - BaseNodeGUID: 5ce37c8f-16fe-414f-8819-6b938a149272
+    PortName: Choice 1
+    TargetNodeGUID: 5f357040-b695-4612-b967-195b49fe6cbd
+  - BaseNodeGUID: 29b06303-ff02-46c2-8cd2-b47b5cf13fb1
+    PortName: Well what exactly were you looking for?
+    TargetNodeGUID: 5ce37c8f-16fe-414f-8819-6b938a149272
+  - BaseNodeGUID: 29b06303-ff02-46c2-8cd2-b47b5cf13fb1
+    PortName: ???
+    TargetNodeGUID: 5ce37c8f-16fe-414f-8819-6b938a149272
+  DialogueNodeData:
+  - GUID: 3ac1f748-8495-4651-9c5a-3c5949ba2fa9
+    DialogueText: Hello dearie... Why what a lovely shop you own here!
+    Position: {x: 268, y: 182.66667}
+  - GUID: 29b06303-ff02-46c2-8cd2-b47b5cf13fb1
+    DialogueText: Dearie I... Oh, so you haven't found out yet...
+    Position: {x: 2393.3333, y: -22}
+  - GUID: d32ba95a-f972-4ead-8cbd-4eb5e0c83884
+    DialogueText: Well it looks like a lot of things I used to own seemed to fall
+      into your possesion!
+    Position: {x: 1658.6666, y: 200.66667}
+  - GUID: 8c372120-7218-4005-b096-94fff0b9539f
+    DialogueText: I remember coming into shops like these with my husband. Gosh what
+      a lovely man he was. Hopefully I will be seeing him soon.
+    Position: {x: 1430, y: -22}
+  - GUID: 8b85c21b-5e79-48aa-95fe-02518bb8a8ce
+    DialogueText: Why of course they do. Sentimental things are in short supply here.
+    Position: {x: 891.3333, y: 213.33334}
+  - GUID: 5ce37c8f-16fe-414f-8819-6b938a149272
+    DialogueText: Well I remember my husband would always take me for a ride on his
+      motorbike.
+    Position: {x: 2871.3333, y: 326}
+  - GUID: 5f357040-b695-4612-b967-195b49fe6cbd
+    DialogueText: Gosh what a thrill that was. I want to feel what its like to go
+      fast. Just one more time.
+    Position: {x: 3478.6667, y: 326}
