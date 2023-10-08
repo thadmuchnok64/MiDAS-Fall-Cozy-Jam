@@ -69,7 +69,7 @@ public class CustomerManager : MonoBehaviour
                 {
                     heldItem.DestroyItem();
                     DialogueManager.instance.RequestDialogue(currentCustomer.sadDialogueContainer, currentCustomer.icon);
-                    currentCustomer.customerSatisfied = false;
+                    currentCustomer.customerSatisfied = true;
                     Invoke("EndCustomer", .2f);
                 }
                 //end of jj
