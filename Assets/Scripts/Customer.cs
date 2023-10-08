@@ -11,4 +11,5 @@ public class Customer : ScriptableObject
     public DialogueContainer happyDialogueContainer;
     public string correctItemName;
     public bool customerSatisfied = false;
+    public AudioClip music;
 }
