@@ -40,7 +40,7 @@ Material:
     - _Float: 3.49
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Radius: 0.72
+    - _Radius: 0.05
     - _Sharpness: 2.69
     - _scale: 150
     - _speed: 0.1

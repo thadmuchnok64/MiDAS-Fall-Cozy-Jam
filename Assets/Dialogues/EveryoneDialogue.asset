@@ -1,0 +1,90 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0a5ed3e328460d4d804f64523cc7bad, type: 3}
+  m_Name: EveryoneDialogue
+  m_EditorClassIdentifier: 
+  NodeLinks:
+  - BaseNodeGUID: start
+    PortName: Next
+    TargetNodeGUID: 71c86a94-7d12-4449-aff1-8882bfc6d4dd
+  - BaseNodeGUID: 71c86a94-7d12-4449-aff1-8882bfc6d4dd
+    PortName: What?
+    TargetNodeGUID: 5844e0ad-1db6-4037-b367-1ff40aea1e4d
+  - BaseNodeGUID: 5844e0ad-1db6-4037-b367-1ff40aea1e4d
+    PortName: What are you talking about?
+    TargetNodeGUID: a2fd93f9-2299-401b-ae96-7f3ed398ae46
+  - BaseNodeGUID: a2fd93f9-2299-401b-ae96-7f3ed398ae46
+    PortName: Choice 1
+    TargetNodeGUID: 3ad7eb9d-7637-4438-a1f2-9414a9a8af3c
+  - BaseNodeGUID: 3ad7eb9d-7637-4438-a1f2-9414a9a8af3c
+    PortName: I dont know if I'm ready
+    TargetNodeGUID: 88303824-e96c-41fe-b563-3979c64ee0de
+  - BaseNodeGUID: 3ad7eb9d-7637-4438-a1f2-9414a9a8af3c
+    PortName: Theres no way this is happening
+    TargetNodeGUID: d2acb2c4-ece2-40b2-b783-ed6efa518a99
+  - BaseNodeGUID: d2acb2c4-ece2-40b2-b783-ed6efa518a99
+    PortName: Well, I was driving to work... and then I... Oh no...
+    TargetNodeGUID: 88303824-e96c-41fe-b563-3979c64ee0de
+  - BaseNodeGUID: 5844e0ad-1db6-4037-b367-1ff40aea1e4d
+    PortName: Oh no...
+    TargetNodeGUID: 41505b78-78f1-479f-9790-28e1c115cf38
+  - BaseNodeGUID: 41505b78-78f1-479f-9790-28e1c115cf38
+    PortName: Choice 1
+    TargetNodeGUID: 88303824-e96c-41fe-b563-3979c64ee0de
+  - BaseNodeGUID: 88303824-e96c-41fe-b563-3979c64ee0de
+    PortName: Choice 1
+    TargetNodeGUID: b769316c-6777-4d3e-b0d4-40c01b9007d0
+  - BaseNodeGUID: b769316c-6777-4d3e-b0d4-40c01b9007d0
+    PortName: Okay... I will follow
+    TargetNodeGUID: 3f83a1a8-c9ad-47c3-b5e4-ca327547c4f9
+  - BaseNodeGUID: b769316c-6777-4d3e-b0d4-40c01b9007d0
+    PortName: Do I need an item to be able to pass on?
+    TargetNodeGUID: 843ca0e6-78e9-4376-80e7-071708cd7375
+  - BaseNodeGUID: 843ca0e6-78e9-4376-80e7-071708cd7375
+    PortName: Okay. I think I'm ready.
+    TargetNodeGUID: 3f83a1a8-c9ad-47c3-b5e4-ca327547c4f9
+  DialogueNodeData:
+  - GUID: 71c86a94-7d12-4449-aff1-8882bfc6d4dd
+    DialogueText: Shopkeeper. It's time.
+    Position: {x: 296.66666, y: 200}
+  - GUID: 5844e0ad-1db6-4037-b367-1ff40aea1e4d
+    DialogueText: You've helped us all rest. We were able to cross this mortal plane
+      thanks to you.
+    Position: {x: 638, y: 200}
+  - GUID: a2fd93f9-2299-401b-ae96-7f3ed398ae46
+    DialogueText: So you haven't put the pieces together yet?
+    Position: {x: 1292, y: 138.66667}
+  - GUID: 3ad7eb9d-7637-4438-a1f2-9414a9a8af3c
+    DialogueText: Shopkeeper, dying is a part of life. It happens to us all. Now
+      its your turn.
+    Position: {x: 1756, y: 138.66667}
+  - GUID: d2acb2c4-ece2-40b2-b783-ed6efa518a99
+    DialogueText: Shopkeeper... What is the last thing you remember.
+    Position: {x: 2448.6667, y: 138.66667}
+  - GUID: 88303824-e96c-41fe-b563-3979c64ee0de
+    DialogueText: Shopkeeper, there is no need to be afraid anymore. You're safe
+      now. We will make sure your journey into the afterlife is safe.
+    Position: {x: 2903.3333, y: 396.66666}
+  - GUID: 41505b78-78f1-479f-9790-28e1c115cf38
+    DialogueText: Shopkeeper, before you helped us, we were not ready to leave either.
+      Through the kindness of you actions, we were able to.
+    Position: {x: 1538.6666, y: 449.3333}
+  - GUID: b769316c-6777-4d3e-b0d4-40c01b9007d0
+    DialogueText: We will make sure that no harm comes to you, shopkeeper.
+    Position: {x: 3886.6667, y: 387.3333}
+  - GUID: 843ca0e6-78e9-4376-80e7-071708cd7375
+    DialogueText: No. Shopkeer, your kindness in giving away the antiques you collected
+      your whole life is reason enough.
+    Position: {x: 4544.6665, y: 229.33334}
+  - GUID: 3f83a1a8-c9ad-47c3-b5e4-ca327547c4f9
+    DialogueText: Lets go, shopkeeper. It's going to be okay.
+    Position: {x: 5378, y: 462}
