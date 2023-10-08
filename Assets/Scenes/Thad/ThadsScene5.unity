@@ -28068,14 +28068,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 254181383}
-    - target: {fileID: 8675198173329387214, guid: d42975d6070598a4f9927c7f2213014f, type: 3}
-      propertyPath: listOfCustomers.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8675198173329387214, guid: d42975d6070598a4f9927c7f2213014f, type: 3}
-      propertyPath: listOfCustomers.Array.data[2]
-      value: 
-      objectReference: {fileID: 11400000, guid: afd1f976534cedf46a2d0603bb95b239, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
