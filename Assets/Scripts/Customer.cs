@@ -9,6 +9,7 @@ public class Customer : ScriptableObject
     public Sprite icon;
     public DialogueContainer dialogueContainer;
     public DialogueContainer happyDialogueContainer;
+    public DialogueContainer sadDialogueContainer;
     public string correctItemName;
     public bool customerSatisfied = false;
 }

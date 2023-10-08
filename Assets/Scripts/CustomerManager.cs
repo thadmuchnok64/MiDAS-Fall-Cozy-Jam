@@ -64,6 +64,15 @@ public class CustomerManager : MonoBehaviour
                     currentCustomer.customerSatisfied = true;
                     Invoke("EndCustomer", .2f);
                 }
+                //JJ added, if no work delete
+                else if (currentCustomer.correctItemName != heldItem.itemName)
+                {
+                    heldItem.DestroyItem();
+                    DialogueManager.instance.RequestDialogue(currentCustomer.sadDialogueContainer, currentCustomer.icon);
+                    currentCustomer.customerSatisfied = false;
+                    Invoke("EndCustomer", .2f);
+                }
+                //end of jj
             }
             if (readyForCustomer && currentCustomer != null && currentCustomer.customerSatisfied && !HUDManager.Instance.isOccupied && HUDManager.Instance.ReadyForNewCustomer())
             {

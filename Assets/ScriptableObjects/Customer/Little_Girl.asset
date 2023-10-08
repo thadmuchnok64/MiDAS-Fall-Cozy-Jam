@@ -16,5 +16,6 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: 57c7b259c4c2238479d68f3715c895f9, type: 3}
   dialogueContainer: {fileID: 11400000, guid: 6a0ce8a628178394184b443b1a5c3ccf, type: 2}
   happyDialogueContainer: {fileID: 11400000, guid: d84d1b5ccedc29b46a5ff72470900758, type: 2}
+  sadDialogueContainer: {fileID: 11400000, guid: 0916553f72d96ed4fa98f86cffaac6b9, type: 2}
   correctItemName: Bookbag
   customerSatisfied: 0
