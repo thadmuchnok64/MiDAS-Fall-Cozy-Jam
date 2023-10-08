@@ -1,0 +1,78 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0a5ed3e328460d4d804f64523cc7bad, type: 3}
+  m_Name: farmerDialogue
+  m_EditorClassIdentifier: 
+  NodeLinks:
+  - BaseNodeGUID: start
+    PortName: Next
+    TargetNodeGUID: 5cb28f2f-6496-465d-b63c-5f9d7f2db4c1
+  - BaseNodeGUID: 5cb28f2f-6496-465d-b63c-5f9d7f2db4c1
+    PortName: I'm tired.
+    TargetNodeGUID: 7316299b-60fc-4009-90d4-475c37f8de8a
+  - BaseNodeGUID: 5cb28f2f-6496-465d-b63c-5f9d7f2db4c1
+    PortName: What's up?
+    TargetNodeGUID: abd9465c-bcfe-4f9e-b91f-796a4becff84
+  - BaseNodeGUID: b751d42a-dab0-4527-9dd3-48177b0e08f9
+    PortName: Ya I got somethin.
+    TargetNodeGUID: 71e633ae-e843-4267-94f7-a47819a44d65
+  - BaseNodeGUID: 7316299b-60fc-4009-90d4-475c37f8de8a
+    PortName: I have achey bones.
+    TargetNodeGUID: b751d42a-dab0-4527-9dd3-48177b0e08f9
+  - BaseNodeGUID: abd9465c-bcfe-4f9e-b91f-796a4becff84
+    PortName: What happened to her?
+    TargetNodeGUID: 0bd0a942-0f44-45b7-ba5c-aed095fca481
+  - BaseNodeGUID: 0bd0a942-0f44-45b7-ba5c-aed095fca481
+    PortName: I know what you need.
+    TargetNodeGUID: 71e633ae-e843-4267-94f7-a47819a44d65
+  - BaseNodeGUID: 7316299b-60fc-4009-90d4-475c37f8de8a
+    PortName: I'm as fit as a fiddle.
+    TargetNodeGUID: c2258359-2196-44ea-bf7c-2c5f904c0340
+  - BaseNodeGUID: c2258359-2196-44ea-bf7c-2c5f904c0340
+    PortName: What did you see out there?
+    TargetNodeGUID: 0bd0a942-0f44-45b7-ba5c-aed095fca481
+  - BaseNodeGUID: e4f9eb9c-ae2b-4fbd-817e-df393a7a5e77
+    PortName: Let me grab you something.
+    TargetNodeGUID: 71e633ae-e843-4267-94f7-a47819a44d65
+  - BaseNodeGUID: c2258359-2196-44ea-bf7c-2c5f904c0340
+    PortName: Who's Bessie?
+    TargetNodeGUID: e4f9eb9c-ae2b-4fbd-817e-df393a7a5e77
+  DialogueNodeData:
+  - GUID: 5cb28f2f-6496-465d-b63c-5f9d7f2db4c1
+    DialogueText: Hey there sprout! How are ya!
+    Position: {x: 280, y: 200}
+  - GUID: 7316299b-60fc-4009-90d4-475c37f8de8a
+    DialogueText: You look young and spry! I have no idea what yer talkin bout!
+    Position: {x: 956, y: 80}
+  - GUID: 0bd0a942-0f44-45b7-ba5c-aed095fca481
+    DialogueText: THEM ALIENS! I stare at the stars all night wonderin where bessie
+      has gone off to, they sure are beau-tiful.
+    Position: {x: 1763, y: 381}
+  - GUID: 71e633ae-e843-4267-94f7-a47819a44d65
+    DialogueText: Alrighty then, lead the way!
+    Position: {x: 2794, y: 200}
+  - GUID: abd9465c-bcfe-4f9e-b91f-796a4becff84
+    DialogueText: Oh I've asked myself about that one. Ya know, my cows have gone
+      missin! I can't find Bessie anywhere!
+    Position: {x: 956, y: 381}
+  - GUID: b751d42a-dab0-4527-9dd3-48177b0e08f9
+    DialogueText: If you helped me on my farm you'd know what real aches are! You
+      got anthing that could distract me from those aches a bit?
+    Position: {x: 1763, y: 80}
+  - GUID: c2258359-2196-44ea-bf7c-2c5f904c0340
+    DialogueText: Now that's what I like to hear! I'd go out when I was your age
+      at night, when the air was cool with Bessie.
+    Position: {x: 1763, y: 221}
+  - GUID: e4f9eb9c-ae2b-4fbd-817e-df393a7a5e77
+    DialogueText: Bessie's my prized cow, although I haven't seen her in quite a
+      while. I do miss her.
+    Position: {x: 2600, y: 453}

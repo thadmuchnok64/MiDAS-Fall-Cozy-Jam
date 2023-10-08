@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0a5ed3e328460d4d804f64523cc7bad, type: 3}
+  m_Name: farmerSad
+  m_EditorClassIdentifier: 
+  NodeLinks:
+  - BaseNodeGUID: start
+    PortName: Next
+    TargetNodeGUID: 1d09f1ba-94f2-4fa0-9bf6-91321b3bcede
+  - BaseNodeGUID: 1d09f1ba-94f2-4fa0-9bf6-91321b3bcede
+    PortName: Well have another.
+    TargetNodeGUID: a034cc97-5918-41df-bd38-bdb07d8570b4
+  DialogueNodeData:
+  - GUID: 1d09f1ba-94f2-4fa0-9bf6-91321b3bcede
+    DialogueText: Now what is this? I done already got one of these!
+    Position: {x: 300, y: 200}
+  - GUID: a034cc97-5918-41df-bd38-bdb07d8570b4
+    DialogueText: Well shoot.
+    Position: {x: 1101, y: 200}
