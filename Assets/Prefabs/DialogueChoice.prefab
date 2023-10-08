@@ -151,7 +151,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   choiceGUID: 
   textGUI: {fileID: 7960922294909343917}
-  clip: {fileID: 0}
+  clip: {fileID: 8300000, guid: ea11e0f2cbb0ab047b058de842352cf2, type: 3}
 --- !u!114 &8609340146653822363
 MonoBehaviour:
   m_ObjectHideFlags: 0

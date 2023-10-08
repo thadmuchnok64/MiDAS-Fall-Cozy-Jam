@@ -13,6 +13,7 @@ public class CustomerManager : MonoBehaviour
     bool withinBounds = false;
     public UIFade fade;
     public List<Customer> listOfCustomers = new List<Customer>();
+    bool readyForCustomer = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +26,7 @@ public class CustomerManager : MonoBehaviour
             Debug.LogError("You have multiple customer manager scripts! This is a singleton so there should only be one!");
             Destroy(this);
         }
+        listOfCustomers.ForEach(c => c.customerSatisfied = false);
     }
 
     
@@ -44,6 +46,10 @@ public class CustomerManager : MonoBehaviour
 
 	private void Update()
 	{
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
         if (withinBounds && Input.GetMouseButtonUp(0))
         {
             if(currentCustomer.correctItemName == heldItem)
@@ -53,24 +59,37 @@ public class CustomerManager : MonoBehaviour
                 Invoke("EndCustomer", .2f);
 			}
         }
-        if(currentCustomer !=null && currentCustomer.customerSatisfied && !HUDManager.Instance.isOccupied && HUDManager.Instance.ReadyForNewCustomer())
+        if(readyForCustomer && currentCustomer !=null && currentCustomer.customerSatisfied && !HUDManager.Instance.isOccupied && HUDManager.Instance.ReadyForNewCustomer())
         {
+            readyForCustomer = false;
 			currentCustomer = null;
             Invoke("IterateCustomer", 3);
 
 		} else if(currentCustomer == null && !HUDManager.Instance.isOccupied)
         {
-			currentCustomer = listOfCustomers.Where(c => c.customerSatisfied != true).FirstOrDefault();
-            Invoke("CustomerWalkIn", Random.Range(3, 5));
+            try
+            {
+                currentCustomer = listOfCustomers.Where(c => c.customerSatisfied != true).FirstOrDefault();
+                Invoke("CustomerWalkIn", Random.Range(10, 15));
+                readyForCustomer = true;
+            }
+            catch
+            {
+                // end the game
+            }
 		}
 	}
 
     public void CustomerWalkIn()
     {
+        if (currentCustomer == null)
+            return; //end game
+        SoundEffectRequest.instance.PlayDoorBell();
 		DialogueManager.instance.RequestDialogue(currentCustomer.dialogueContainer, currentCustomer.icon);
 	}
     public void IterateCustomer()
     {
+		currentCustomer = null;
 		HUDManager.Instance.Fade();
 	}
 
