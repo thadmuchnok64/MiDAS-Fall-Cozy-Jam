@@ -37,7 +37,8 @@ public class DialogueManager : MonoBehaviour
             return false;
         ClearChoices();
         isOccupied = true;
-        dialogueContainer = containter;
+		dialogueBox.text = "";
+		dialogueContainer = containter;
         currentNode = containter.NodeLinks[0].TargetNodeGUID;
         HUDManager.Instance.ToggleDialogue(true,portrait);
         Invoke("InitializeDialogue",1.25f);
@@ -46,8 +47,8 @@ public class DialogueManager : MonoBehaviour
 
     public void InitializeDialogue()
     {
-		IncrementDialogue(currentNode);
 		dialogueBox.text = "";
+		IncrementDialogue(currentNode);
 
 	}
 	public void IncrementDialogue(string targetGUID)

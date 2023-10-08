@@ -28016,6 +28016,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 276828177023509705, guid: d42975d6070598a4f9927c7f2213014f, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -619
+      objectReference: {fileID: 0}
+    - target: {fileID: 276828177023509705, guid: d42975d6070598a4f9927c7f2213014f, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 69
+      objectReference: {fileID: 0}
     - target: {fileID: 3416879095274423062, guid: d42975d6070598a4f9927c7f2213014f, type: 3}
       propertyPath: m_Name
       value: GameMaster
