@@ -5,4 +5,10 @@ using UnityEngine;
 public class Item : MonoBehaviour
 {
     public string itemName = "Box";
+
+	public void DestroyItem()
+	{
+		Destroy(gameObject);
+	}
 }
+

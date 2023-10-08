@@ -24,13 +24,21 @@ public class DialogueChoice : MonoBehaviour
 
     public void DestroySelf()
     {
-        Destroy(gameObject, .05f);
+        try
+        {
+            Destroy(gameObject);
+        }
+        catch { }
     }
 
     public void Choose()
     {
-        if (textGUI.text.Equals("END DIALOGUE"))
+        SoundEffectRequest.instance.PlaySound(clip);
+        if (choiceGUID.Equals("END DIALOGUE"))
+        {
             DialogueManager.instance.StopDialogue();
+            Destroy(gameObject);
+        }
         else
             DialogueManager.instance.IncrementDialogue(choiceGUID);
     }
