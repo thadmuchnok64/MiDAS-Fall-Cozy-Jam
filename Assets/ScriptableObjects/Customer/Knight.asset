@@ -19,3 +19,4 @@ MonoBehaviour:
   sadDialogueContainer: {fileID: 11400000, guid: 49e07d3cc8b5260499e8f026ed89cc86, type: 2}
   correctItemName: Poems
   customerSatisfied: 0
+  music: {fileID: 8300000, guid: ee8725ffa06283e42a43641781757673, type: 3}

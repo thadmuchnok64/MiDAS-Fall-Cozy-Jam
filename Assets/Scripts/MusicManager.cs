@@ -6,16 +6,37 @@ public class MusicManager : MonoBehaviour
 {
     public AudioSource aud;
     public AudioClip loadedClip;
-    public MusicManager instance;
+    public static MusicManager instance;
 
-    public void SetMusic()
+	private void Start()
+	{
+		if(instance == null)
+        {
+            instance = this;
+        } else
+        {
+            Destroy(this);
+        }
+	}
+
+	public void SetMusic(AudioClip clip)
     {
-        aud.clip = loadedClip;
-        aud.Play();
+        StartCoroutine(fadeinclip(clip));
     }
 
-    public void LoadClip()
+    public IEnumerator fadeinclip(AudioClip clip)
     {
-        loadedClip = CustomerManager.Instance.currentCustomer.music;
-    }
+        for(float i= 0; i< 120; i++)
+        {
+            aud.volume = Mathf.Lerp(1, 0, i / 120f);
+            yield return new WaitForEndOfFrame();
+        }
+        aud.PlayOneShot(clip);
+		for (float i = 0; i < 120; i++)
+		{
+			aud.volume = Mathf.Lerp(0, 1, i / 120f);
+			yield return new WaitForEndOfFrame();
+
+		}
+	}
 }

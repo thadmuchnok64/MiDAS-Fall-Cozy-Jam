@@ -55,7 +55,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _Eccentricity: 0.147
-    - _Fade: -0.20381504
+    - _Fade: -0.20371766
     - _NoiseScale: 50.17
     - _QueueControl: 0
     - _QueueOffset: 0

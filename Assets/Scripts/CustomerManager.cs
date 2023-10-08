@@ -67,9 +67,9 @@ public class CustomerManager : MonoBehaviour
                 //JJ added, if no work delete
                 else if (currentCustomer.correctItemName != heldItem.itemName)
                 {
-                    heldItem.DestroyItem();
+                    //heldItem.DestroyItem();
                     DialogueManager.instance.RequestDialogue(currentCustomer.sadDialogueContainer, currentCustomer.icon);
-                    currentCustomer.customerSatisfied = false;
+                    currentCustomer.customerSatisfied = true;
                     Invoke("EndCustomer", .2f);
                 }
                 //end of jj
@@ -92,10 +92,13 @@ public class CustomerManager : MonoBehaviour
 						int i = 0;
 						over = true;
 						DialogueManager.instance.RequestDialogue(currentCustomer.dialogueContainer, currentCustomer.icon);
-					}
+                    }
                     if (readyForCustomer == false)
+                    {
                         Invoke("CustomerWalkIn", Random.Range(10, 15));
-                    readyForCustomer = true;
+						MusicManager.instance.SetMusic(currentCustomer.music);
+					}
+					readyForCustomer = true;
                 }
                 catch
                 {

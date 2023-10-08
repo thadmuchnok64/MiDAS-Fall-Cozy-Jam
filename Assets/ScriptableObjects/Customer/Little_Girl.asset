@@ -18,4 +18,5 @@ MonoBehaviour:
   happyDialogueContainer: {fileID: 11400000, guid: d84d1b5ccedc29b46a5ff72470900758, type: 2}
   sadDialogueContainer: {fileID: 11400000, guid: 0916553f72d96ed4fa98f86cffaac6b9, type: 2}
   correctItemName: Bookbag
-  customerSatisfied: 0
+  customerSatisfied: 1
+  music: {fileID: 8300000, guid: 769b520bea8c245428c78015ce6e6b92, type: 3}
