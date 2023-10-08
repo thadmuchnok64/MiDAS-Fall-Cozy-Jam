@@ -16,5 +16,7 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: 978ea11386b82cb45ae1567665637ebc, type: 3}
   dialogueContainer: {fileID: 11400000, guid: d532d95983078924699c201609075ff0, type: 2}
   happyDialogueContainer: {fileID: 0}
+  sadDialogueContainer: {fileID: 0}
   correctItemName: 
   customerSatisfied: 0
+  music: {fileID: 8300000, guid: 85c98bf01bf9aa547bb42b7c1cd9be2e, type: 3}

@@ -18,4 +18,5 @@ MonoBehaviour:
   happyDialogueContainer: {fileID: 11400000, guid: 911ffcdfcf11d5e47a4c9fb35fd0f8a5, type: 2}
   sadDialogueContainer: {fileID: 11400000, guid: d01a1150c78f1f74ebcea8f6689f2600, type: 2}
   correctItemName: Gurdy
-  customerSatisfied: 1
+  customerSatisfied: 0
+  music: {fileID: 8300000, guid: a9a56338157f55c44b8837861754b82f, type: 3}
