@@ -16,6 +16,7 @@ public class CustomerManager : MonoBehaviour
     public Customer everyone;
     bool readyForCustomer = false;
     bool over = false;
+    bool actuallyOverForRealThisTime = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -97,14 +98,18 @@ public class CustomerManager : MonoBehaviour
         }
         else
         {
-            Invoke("EndGame", 12);
+            if (!actuallyOverForRealThisTime)
+            {
+                Invoke("EndGame", 12);
+                actuallyOverForRealThisTime= true;
+            }
         }
         
 	}
 
     public void EndGame()
     {
-		DialogueManager.instance.RequestDialogue(currentCustomer.dialogueContainer, currentCustomer.icon);
+		DialogueManager.instance.RequestDialogue(everyone.dialogueContainer, everyone.icon);
         HUDManager.Instance.EndGame();
 	}
 
