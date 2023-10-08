@@ -65,7 +65,6 @@ public class CameraController : MonoBehaviour
         float fracComplete = ((Time.time - startTime) / journeyTime)/10;
 
         cam.transform.position = Vector3.Slerp(slerpStart, slerpEnd, fracComplete);
-        Debug.Log(fracComplete);
 
         Vector3 slerpRotStart = cam.transform.eulerAngles;
         Vector3 slerpRotEnd = slerpRotStart;

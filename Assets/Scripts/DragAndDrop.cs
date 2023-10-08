@@ -9,6 +9,8 @@ public class DragAndDrop : MonoBehaviour
 
 {
     public AudioClip DragNoise;
+    public AudioClip DropNoise;
+    public GameObject dust;
     Vector3 mPosition;
     float mouseZ;
     public LayerMask itemMask;
@@ -17,7 +19,12 @@ public class DragAndDrop : MonoBehaviour
     public static bool isResetting;
     float scrollCooldown = .5f;
     float scrolltimer = 0;
-    private Vector3 GetMouseAsWorldPoint()
+    Rigidbody rb;
+	private void Start()
+	{
+		rb = GetComponent<Rigidbody>();
+	}
+	private Vector3 GetMouseAsWorldPoint()
     {
         Vector3 mousePoint = Input.mousePosition;
         mousePoint.z = transform.position.z;
@@ -38,9 +45,9 @@ public class DragAndDrop : MonoBehaviour
         //IMPORTANT: This only works if ever object has a boxcollider, and specifically a BOX collider.
         var box = GetComponent<BoxCollider>();
         var dimensions =  new Vector3(
-            (box.size.x/2.0f)*transform.localScale.x,
-			(box.size.y / 2.0f)*transform.localScale.y,
-			(box.size.z / 2.0f) * transform.localScale.z
+            (box.size.x/2.0f)*transform.localScale.x+.05f,
+			(box.size.y / 2.0f)*transform.localScale.y+.05f,
+			(box.size.z / 2.0f) * transform.localScale.z+ .05f
             );
         var modifier = new Vector3(
             AdjustBasedOnDimension(position, transform.right, dimensions.x),
@@ -100,31 +107,43 @@ public class DragAndDrop : MonoBehaviour
 	{
 		CustomerManager.Instance.heldItem = GetComponent<Item>().itemName;
         transform.parent = null;
+        SoundEffectRequest.instance.PlaySound(DragNoise);
 	}
 	void OnMouseUp()
     {
         if (canDrag == true)
         {
             isDragging = true;
-            StartCoroutine(FallDown());
+            rb.isKinematic= false;
+            //StartCoroutine(FallDown());
             //implement audio when dragged
             //AudioSource audio = GetComponent<AudioSource>();
             //audio.clip = DragNoise;
             //audio.Play();
         }
     }
+	private void OnCollisionEnter(Collision collision)
+	{
+        rb.isKinematic = true;
+        transform.parent = collision.transform;
+		SoundEffectRequest.instance.PlaySound(DropNoise);
+        Instantiate(dust, collision.GetContact(0).point, Quaternion.identity);
+	}
 
+	/*
     public IEnumerator FallDown()
     {
-		Ray ray = new Ray(transform.position, Vector3.down);
         var offset = Vector3.Scale(GetComponent<BoxCollider>().size,transform.localScale);
 		RaycastHit hit;
         Vector3 target;
-        if (Physics.BoxCast(transform.position, offset / 3.0f, Vector3.down,out hit, transform.rotation, 10, itemMask))
+        if (Physics.BoxCast(transform.position, offset / 3.0f, Vector3.down,out hit, transform.rotation, 100, itemMask))
         {
             target = new Vector3(transform.position.x, (hit.point.y + offset.y/2f),transform.position.z);
+            Debug.Log(target.y);
             for (float i = 0; i < 30; i++)
             {
+
+				Debug.DrawLine(transform.position, target);
                 transform.position = Vector3.Lerp(transform.position, target, i / 30.0f);
                 yield return new WaitForFixedUpdate();
             }
@@ -133,8 +152,8 @@ public class DragAndDrop : MonoBehaviour
 		}
 
 	}
-
-    public IEnumerator Scroll(bool positive)
+    */
+	public IEnumerator Scroll(bool positive)
     {
         Quaternion attemptrot;
         if (positive) { attemptrot= Quaternion.AngleAxis(transform.eulerAngles.y + 90, Vector3.up); }

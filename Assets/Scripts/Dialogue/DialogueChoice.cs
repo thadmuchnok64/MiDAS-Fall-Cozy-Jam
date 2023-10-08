@@ -33,6 +33,7 @@ public class DialogueChoice : MonoBehaviour
 
     public void Choose()
     {
+        SoundEffectRequest.instance.PlaySound(clip);
         if (choiceGUID.Equals("END DIALOGUE"))
         {
             DialogueManager.instance.StopDialogue();
